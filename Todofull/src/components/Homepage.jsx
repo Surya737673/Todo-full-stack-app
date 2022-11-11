@@ -22,7 +22,7 @@ export const Homepage = () => {
   }
 
   const [title, setTitle] = useState("");
-
+  const [data,setData]=useState({});
   
 
   useEffect(() => {
@@ -59,16 +59,20 @@ export const Homepage = () => {
       <Navbar prop={auth} />
       <h3 style={{ marginLeft: "600px" }}></h3>
       <div id={styles.tododiv}>
-        <label>Create todo</label>
-        <input
+        <label>User Details</label>
+        {/* <input
           type="text"
           name="title"
           onChange={(e) => setTitle(e.target.value)}
-        />
-        <button onClick={handleSubmit}>Add todo</button>
+        /> */}
+        {/* <button onClick={handleSubmit}>Add todo</button> */}
       </div>
       <div id={styles.listdiv}>
-        {todos.map((e) => (
+        <div>Name:{auth.name}</div>
+        <div>Token:{auth.token}</div>
+        <div>UserId:{auth.userId}</div>
+        <div>Login Status:Logged in</div>
+        {/* {todos.map((e) => (
           <>
                 <div>
                 <div key={e._id}> {e.title} </div> 
@@ -79,7 +83,7 @@ export const Homepage = () => {
                 </div>
                 </div>
           </>
-        ))}
+        ))} */}
       </div>
     </>
   );
